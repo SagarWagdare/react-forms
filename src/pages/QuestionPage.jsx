@@ -12,6 +12,28 @@ const QuestionPage = () => {
   const [isChecked, setIsChecked] = useState(false);
   const cardCount = useSelector((state) => state.form.cardCount);
   const dispatch = useDispatch();
+  const [checkbox, setCheckbox] = useState([""]);
+  const [radioinput, setRadioinput] = useState([""]);
+
+  const addradioinput = () => {
+    setRadioinput([...radioinput, ""]);
+  };
+
+  const handleradioinput = (index, value) => {
+    const updatedOptions = [...radioinput];
+    updatedOptions[index] = value;
+    setRadioinput(updatedOptions);
+  };
+
+  const addOption = () => {
+    setCheckbox([...checkbox, ""]);
+  };
+
+  const handleOptionChange = (index, value) => {
+    const updatedOptions = [...checkbox];
+    updatedOptions[index] = value;
+    setCheckbox(updatedOptions);
+  };
 
   const handleClick = () => {
     dispatch(incrementCardCount());
@@ -24,26 +46,48 @@ const QuestionPage = () => {
     case "Multiple Choice":
       inputFieldType = (
         <>
-          <input
-            type="radio"
-            className="multiplechoice_input"
-            placeholder="Question"
-            disabled
-          />
-          <span className="multiplechoice_span   text-primary">Add option</span>
+          {radioinput.map((option, index) => (
+            <div className="multiplechoice_container" key={index}>
+              <i className="fa-regular fa-circle"></i>
+              <input
+                type="text"
+                className="multiplechoice_input"
+                placeholder="Add option"
+                value={option}
+                onChange={(e) => handleradioinput(index, e.target.value)}
+              />
+            </div>
+          ))}
+
+          <span
+            onClick={addradioinput}
+            className="multiplechoice_span text-primary"
+          >
+            Add option
+          </span>
         </>
       );
       break;
     case "Check Box":
       inputFieldType = (
         <>
-          <input
-            type="checkbox"
-            className="checkbox_input"
-            placeholder="Question"
-            disabled
-          />
-          <span className="checkbox_span text-primary">Add option</span>
+          {checkbox.map((option, index) => (
+            <div className="checkbox_container">
+              <i className="fa-regular fa-square"></i>
+              <input
+                type="text"
+                className="checkbox_input"
+                placeholder="Add option"
+                // disabled
+                key={index}
+                value={option}
+                onChange={(e) => handleOptionChange(index, e.target.value)}
+              />
+            </div>
+          ))}
+          <span onClick={addOption} className="checkbox_span text-primary">
+            Add option
+          </span>
         </>
       );
       break;
