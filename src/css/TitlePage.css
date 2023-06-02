@@ -1,0 +1,46 @@
+.titlepage_container {
+    margin-top: 20px;
+}
+
+.titlepage_card {
+    width: 50%;
+    margin: auto;
+    border: 0;
+
+}
+
+.titlepagecard_span {
+    background-color: #673AB7;
+    height: 13px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.title_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    transition: border-color 0.3s;
+}
+
+.title_input:focus {
+    border-bottom-color: #673AB7;
+
+}
+
+.description_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+}
+
+
+.description_input:focus {
+    border-bottom-color: #673AB7;
+
+}

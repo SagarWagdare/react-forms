@@ -1,0 +1,169 @@
+.questionpage_container {
+    margin-top: 20px;
+}
+
+.questionpage_card {
+    width: 50%;
+    margin: auto;
+    border: 0;
+}
+
+
+
+.question_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid white;
+    width: 100%;
+    height: auto;
+}
+
+
+.question_input:focus {
+    border-bottom-color: #673AB7;
+
+}
+
+
+
+.inputandSelect_container {
+    display: flex;
+}
+
+.select_form {
+    width: 200px;
+    margin: 20px 30px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+
+}
+
+.multiplechoice_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+
+}
+
+.multiplechoice_span {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    width: 200px;
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+}
+
+.checkbox_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+
+.checkbox_span {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    width: 200px;
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+}
+
+.shortanswer_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    width: 500px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.paragraph_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+    width: 730px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.time_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+    width: 200px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.fileupload_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+    width: 200px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.data_input {
+    margin: 13px 13px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    color: gray;
+    width: 200px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.smallSwitch {
+    transform: scale(0.6);
+    background: #673AB7;
+}
+
+.questioncard_options {
+    display: flex;
+    padding: 10px;
+    justify-content: end;
+    margin: 0px 30px;
+    cursor: pointer;
+}
+
+.required_span {
+    padding: 0;
+    margin: 0;
+}
