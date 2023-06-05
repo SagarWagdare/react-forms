@@ -5,7 +5,12 @@ import AddCardPage from "./AddCardPage";
 import Switch from "react-switch";
 import "../css/QuestionPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { incrementCardCount } from "../redux/slice/fomSlice";
+import {
+  addQuestion,
+  incrementCardCount,
+  setInputValue,
+} from "../redux/slice/fomSlice";
+import uuid from "react-uuid";
 const QuestionPage = () => {
   const [selectedOption, setSelectedOption] = useState("Multiple Choice");
   console.log(selectedOption);
@@ -14,6 +19,16 @@ const QuestionPage = () => {
   const dispatch = useDispatch();
   const [checkbox, setCheckbox] = useState([""]);
   const [radioinput, setRadioinput] = useState([""]);
+
+  const handleInputChange = (e) => {
+    const { cardId } = e.target.dataset;
+    const question = e.target.value;
+    const type = "";
+    const required = false;
+    dispatch(
+      addQuestion({ cardId: parseInt(cardId), question, type, required })
+    );
+  };
 
   const addradioinput = () => {
     setRadioinput([...radioinput, ""]);
@@ -154,7 +169,7 @@ const QuestionPage = () => {
       <TitlePage />
       <AddCardPage handleClick={handleClick} />
 
-      {Array.from({ length: cardCount }, (_, index) => (
+      {Array.from({ length: cardCount }, (_, cardIndex) => (
         <div className="questionpage_container">
           <Card className="questionpage_card shadow">
             <div className="inputandSelect_container">
@@ -162,6 +177,8 @@ const QuestionPage = () => {
                 type="text"
                 className="question_input"
                 placeholder="Question"
+                data-card-id={cardIndex}
+                onChange={handleInputChange}
               />
 
               <Form.Select
